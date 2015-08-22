@@ -1,0 +1,96 @@
+<!DOCTYPE>
+
+<html>
+    
+    <head>
+        <title>Login</title>
+        
+        <link rel="stylesheet" type="text/css" href="Login.css">
+        
+        <script type="text/javascript">
+            
+            function checkforinfo()
+            {
+                var email = document.getElementById("email").value;
+                
+                var password = document.getElementById("password").value;
+               
+                
+                if(email=="" || password=="")
+                {
+                    alert('Enter the required fields');
+                    
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+                
+            }
+        </script>
+        
+    </head>
+    
+    <body>
+        
+        <div id="container">
+            
+            <header>
+                <img src="Images/ma.jpg" style="height:100px; margin-left:50px">
+                <div class="nav">
+                    <ul>
+                        
+                            <li><a href="Index.html" style="color:brown">HOME</a></li>
+                            <li><a href="#" style="color:brown">FEATURES</a></li>
+                            <li><a href="#" style="color:brown">CONTACT</a></li>
+                        
+                        
+                    </ul>
+                </div>
+            </header>
+        
+            <div id="main">
+                
+                <div id="column1">
+                    
+                </div>
+                
+              
+                <div id="column2">
+                    
+                
+                    <form class="form1" method="post" action="#" onsubmit="return checkforinfo()">
+            <h1 style="color:rgb(255,214,74); margin-left:200px">Login</h1>
+           
+            <label for="Email" style="margin-left:125px; color:white; font-size:20px">Email: <input type="text" placeholder="Enter Your Corporate Email ID" name="email" id="email" size="20"></label><br><br>
+            
+            
+            <label for="Password" style="margin-left:95px; color:white; font-size:20px">Password: <input type="password" placeholder="Enter Your Password" name="password" id="password" size="20"></label>
+            
+            <a href="Forgot%20Password.html" style="color:white; margin-left:180px; margin-right:150px; text-decoration:underline">Forgot Password</a><br>
+            
+            <input type="submit" value="Login" style="margin-left:250px; font-weight:bolder; font-size:150%;  border-radius:10px; width:100px">
+                        
+            
+            
+        </form>
+                    
+             <p style="color:white; font-size:17px; margin-left:100px">If You are a new Member, please click here<br> <a href="IH%20Registration.html" style="margin-left:200px; margin-right:100px; color:white; font-size:20px; text-decoration:underline">SignUP</a> </p>
+                   
+                </div>
+                
+                <div id="sidebar">
+                    
+                </div>
+            
+            </div>
+        
+            <footer>
+                <p>Copyright@2015 IRON-HIDE. All rights reserved.</p>
+                
+            </footer>
+        </div>
+    </body>
+    
+</html>
