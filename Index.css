@@ -1,0 +1,88 @@
+.body
+    {
+        position: fixed;
+         line-height: 25px;
+        margin-left: 100px;
+        margin-right: 40px;
+        margin-bottom: 50px; 
+        background-image-height:50px;
+    
+    }
+.header
+    {
+        
+        padding-top: 0px;
+        padding-left: 10px;
+        padding-right: 20px;
+        background-image: url(images/webtreatsmetal5.jpg);
+        padding-bottom: 75px;
+    }
+.container
+    {
+        width: 960px;
+        margin: 0 auto;
+    }
+.logo
+    {
+        float: left;
+        
+        font-size: 20px;
+        
+    }
+a
+    {
+      
+        display: block;
+        font-weight: bold;
+        text-decoration: none;
+        color: rgb(255,214,74);
+    }
+li
+    {
+        list-style: none;
+        float: left;
+        margin-left: 15px;
+        padding-top: 10px;
+    
+    }
+.nav
+    {
+        float: right;
+    }
+.h1
+    {
+        font-size: 300%;
+        font-style:normal;
+    }
+.head3
+    {
+        padding-top: 100px;
+        
+        color: rgb(255,214,74);
+        text-align: center;
+    }
+
+code 
+    {
+        background-color:white;
+        color: #666;
+        font-weight: lighter;
+ 
+        display: inline-block;
+        height: 200px;
+        padding-top: 20px;
+        text-align: center;
+        width: 210px;
+    }
+.head4
+    {
+        margin-top: 50px;
+        
+        border: 1px;
+        text-align: left;
+        padding-top: 20px;
+        font-family:serif;
+        font-size: 12;
+        column-span: 1;
+        
+    }
