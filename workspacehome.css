@@ -1,0 +1,75 @@
+header
+    {
+        background-color:white;
+        min-height: auto;
+        
+    }
+
+#container
+    {
+        margin-left: 100px;
+        margin-right: 100px;
+        height: 10px auto;
+    }
+
+a
+    {
+        display: block;
+        font-weight: bold;
+        text-decoration: none;
+        color: rgb(255,214,74);
+    }
+
+li
+    {
+        
+        list-style: none;
+        float: left;
+        margin-left: 15px;
+        padding-top: 50px;
+    
+    }
+
+.nav
+    {
+        float: right;
+        margin-right: 50px;
+    }
+
+#main
+    {
+        background-color: white;
+        min-height: 500px;
+    }
+
+#column1
+    {
+        background-color: aqua;
+        min-width: 300px;
+        float: left
+    }
+
+#column2
+    {
+        margin-left: 300px;
+        background-image: url(Images/webtreatsmetal5.jpg);
+        width: 450px;
+        float:left;
+        padding-bottom: 50px;
+    }
+
+#sidebar
+    {
+        background-color: blue;
+        width: 350px;
+        float: left;
+    }
+
+footer
+    {
+        min-height: 70px;
+        background-color: whitesmoke;
+        text-align: center;
+        padding-top: 10px;
+    }
+
