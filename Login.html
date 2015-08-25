@@ -19,6 +19,7 @@
                 if(email=="" || password=="")
                 {
                     alert('Enter the required fields');
+                    window.alert();
                     
                     return false;
                 }
@@ -28,6 +29,7 @@
                 }
                 
             }
+            
         </script>
         
     </head>
@@ -37,7 +39,7 @@
         <div id="container">
             
             <header>
-                <img src="Images/ma.jpg" style="height:100px; margin-left:50px">
+                <img src="images/logo1.png" style="height:100px; margin-left:50px">
                 <div class="nav">
                     <ul>
                         
@@ -63,20 +65,21 @@
                     <form class="form1" method="post" action="#" onsubmit="return checkforinfo()">
             <h1 style="color:rgb(255,214,74); margin-left:200px">Login</h1>
            
-            <label for="Email" style="margin-left:125px; color:white; font-size:20px">Email: <input type="text" placeholder="Enter Your Corporate Email ID" name="email" id="email" size="20"></label><br><br>
+            <label for="Email" style="margin-left:125px; color:white; font-size:19px">Email: <input type="text" placeholder="Enter Your Corporate Email ID" name="email" id="email" size="30"></label><br><br>
             
             
-            <label for="Password" style="margin-left:95px; color:white; font-size:20px">Password: <input type="password" placeholder="Enter Your Password" name="password" id="password" size="20"></label>
+            <label for="Password" style="margin-left:95px; color:white; font-size:19px">Password: <input type="password" placeholder="Enter Your Password" name="password" id="password" size="30"></label><br><br><br>
+                        
+            <input type="submit" value="Login" style="margin-left:250px; font-weight:bolder; font-size:100%;  border-radius:10px; width:100px"><br><br>
+                        
             
             <a href="Forgot%20Password.html" style="color:white; margin-left:180px; margin-right:150px; text-decoration:underline">Forgot Password</a><br>
-            
-            <input type="submit" value="Login" style="margin-left:250px; font-weight:bolder; font-size:150%;  border-radius:10px; width:100px">
-                        
+
             
             
         </form>
                     
-             <p style="color:white; font-size:17px; margin-left:100px">If You are a new Member, please click here<br> <a href="IH%20Registration.html" style="margin-left:200px; margin-right:100px; color:white; font-size:20px; text-decoration:underline">SignUP</a> </p>
+             <p style="color:white; font-size:17px; margin-left:100px">If you are a new user, please click here<a href="IH%20Registration.html" style="margin-left:100px; margin-right:100px; color:white; font-size:20px; text-decoration:underline">SignUp</a> </p>
                    
                 </div>
                 
