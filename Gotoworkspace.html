@@ -21,6 +21,11 @@
                     
                     return false;
                 }
+                if(password != "12345")
+                {
+                    alert('Please check your Encryption Password');
+                    return false;
+                }
                 else
                 {
                     return true;
@@ -59,7 +64,7 @@
                 <div id="column2">
                     
                 
-                    <form class="form1" method="post" action="#" onsubmit="return checkforinfo()">
+                    <form class="form1" method="post" action="upload-download.html" onsubmit="return checkforinfo()">
                         <h1 style="color:rgb(255,214,74); margin-left:100px">Goto Workspace</h1>
            
                         <label for="Workspace name" style="margin-left:83px; color:white; font-size:20px">Select Workspace: 
@@ -71,7 +76,7 @@
                         </select><br><br>
             
                     
-                        <label for="Encryption Password" style="margin-left:55px; color:white; font-size:20px">Encryption Password: <input type="password" placeholder="Enter Your Password" name="password" id="password" size="20"></label><br><br>
+                        <label for="Encryption Password" style="margin-left:55px; color:white; font-size:20px">Encryption Password: <input type="password" placeholder="Enter Your Password" name="password" id="password" value="" size="20"></label><br><br>
             
             
                         <input type="submit" value="Submit" style="margin-left:250px; font-weight:bolder; font-size:120%;  border-radius:10px; width:100px">
@@ -80,7 +85,7 @@
                     </form>
                         
                     <center>
-                        <button style="font-weight:bolder; height:50px; margin-top:20px; width:300px; font-size:70%; background-color:green; border-radius:10px"><a href="#" style="color:black">Retrieve Encryption Password <br> Using Workspace Key</a> </button>
+                        <button style="font-weight:bolder; height:50px; margin-top:20px; width:300px; font-size:70%; background-color:green; border-radius:10px"><a href="Retrieve%20Encryption%20Password.html" style="color:black">Retrieve Encryption Password <br> Using Workspace Key</a> </button>
                         
                     </center>
                    
