@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE>
 
 <html>
@@ -99,4 +100,107 @@
         </div>
     </body>
     
+=======
+<!DOCTYPE>
+
+<html>
+    
+    <head>
+        <title>Registration</title>
+        
+        <link rel="stylesheet" type="text/css" href="IH%20Registration.css">
+        
+        <script type="text/javascript">
+            
+            function checkforinfo(passForm)
+            {
+                var email = document.getElementById("email").value;
+                var fapin = document.getElementById("fapin").value;
+                var password = document.getElementById("password").value;
+                var conpass = document.getElementById("conpass").value;
+                
+                if(email=="" || fapin=="" || password=="" || conpass=="")
+                {
+                    alert('Enter the required fields');
+                    
+                    return false;
+                }
+                if (passForm.password.value != passForm.conpass.value) 
+                {
+                    alert("Passwords do not match");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+                
+            }
+            
+        </script>
+        
+    </head>
+    
+    <body>
+        
+        <div id="container">
+            
+            <header>
+                <img src="Images/ma.jpg" style="height:100px; margin-left:50px">
+                <div class="nav">
+                    <ul>
+                        
+                            <li><a href="Index.html" style="color:brown">HOME</a></li>
+                            <li><a href="#" style="color:brown">FEATURES</a></li>
+                            <li><a href="#" style="color:brown">CONTACT</a></li>
+                        
+                        
+                    </ul>
+                </div>
+            </header>
+        
+            <div id="main">
+                
+                <div id="column1">
+                    
+                </div>
+                
+              
+                <div id="column2">
+                    
+                
+                    <form class="form1" method="post" action="Login.html" onsubmit="return checkforinfo(this)">
+            <h1 style="color:rgb(255,214,74); margin-left:100px">Create Account</h1>
+           
+            <label for="Email" style="margin-left:130px; color:white; font-size:20px">Email: <input type="text" placeholder="Enter Your Corporate Email ID"  name="email" id="email" size="20"></label><br><br>
+            
+            <label for="2FA Pin" style="margin-left:108px; color:white; font-size:20px">2FA Pin: <input type="tetx"  name="2FA Pin" id="fapin" size="20" height="100"></label>
+                        
+             <a href="#" style="color:white; margin-left:185px; margin-right:100px; text-decoration:underline">Send 2FA Pin to Email</a><br>
+            
+            <label for="Password" style="margin-left:100px; color:white; font-size:20px">Password: <input type="password" placeholder="Enter Your Password" name="password" id="password" size="20"></label><br><br>
+            
+            <label for="Confirm Password" style="margin-left:25px; color:white; font-size:20px">Confirm Password: <input type="password" placeholder="Confirm Your Password" name="conpass" id="conpass" size="20"></label><br><br><br>
+            
+            <input type="submit" value="Create" style="margin-left:250px; font-weight:bolder; font-size:150%;  border-radius:10px; width:100px">
+            
+            
+                    </form>
+                   
+                </div>
+                
+                <div id="sidebar">
+                    
+                </div>
+            
+            </div>
+        
+            <footer>
+                <p>Copyright@2015 IRON-HIDE. All rights reserved.</p>
+                
+            </footer>
+        </div>
+    </body>
+    
+>>>>>>> 61834086737768c83c0698bf0f2ac9302a155e5e
 </html>
