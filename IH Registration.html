@@ -9,7 +9,7 @@
         
         <script type="text/javascript">
             
-            function checkforinfo()
+            function checkforinfo(passForm)
             {
                 var email = document.getElementById("email").value;
                 var fapin = document.getElementById("fapin").value;
@@ -18,8 +18,13 @@
                 
                 if(email=="" || fapin=="" || password=="" || conpass=="")
                 {
-                    alert('Enter the required fields');
+                    window.alert('Enter the required fields');
                     
+                    return false;
+                }
+                if (passForm.password.value != passForm.conpass.value) 
+                {
+                    alert("Passwords do not match");
                     return false;
                 }
                 else
@@ -61,7 +66,7 @@
                 <div id="column2">
                     
                 
-                    <form class="form1" method="post" action="Login.html" onsubmit="return checkforinfo()">
+                    <form class="form1" method="post" action="Login.html" onsubmit="return checkforinfo(this)">
             <h1 style="color:rgb(255,214,74); margin-left:100px">Create Account</h1>
            
             <label for="Email" style="margin-left:130px; color:white; font-size:20px">Email: <input type="text" placeholder="Enter Your Corporate Email ID"  name="email" id="email" size="20"></label><br><br>
