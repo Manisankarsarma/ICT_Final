@@ -1,0 +1,284 @@
+/* CSS declarations go here */
+/*.body
+    {
+        position: fixed;
+        line-height: 25px;
+        margin-left: 100px;
+        margin-right: 40px;
+        margin-bottom: 50px; 
+       
+    
+    }*/
+.header
+    {
+        
+        padding-top: 0px;
+        padding-left: 10px;
+        padding-right: 20px;
+        padding-bottom: 75px;
+    }
+
+
+button
+{
+    background-color: coral;
+}
+
+.site_image
+    {
+ text-align: center;
+        
+    }
+
+h2
+{
+font-family: monospace;
+   color: #3A3A5D;
+     
+}
+.container
+    {
+        width: 1000px;
+        margin: 0 auto;
+        background-color: #3A3A5D;
+        height: 80px;
+        border-radius: 10px;
+        /*background-image: url(images/webtreatsmetal5.jpg);*/
+    }
+.logo
+    {
+        float: left;
+        
+        font-size: 20px;
+        
+        padding-top: 10px;
+        
+        padding-left: 10px;
+        
+    }
+a
+    {
+      
+        display: block;
+        font-weight: bold;
+        text-decoration: none;
+        color: rgb(255,214,74);
+    }
+
+
+.nav
+    {
+        margin-right: 60px;
+        padding-top: 10px;
+        
+        float: right;
+    }
+.h1
+    {
+        font-size: 300%;
+        font-style:normal;
+    }
+.head3
+    {
+        padding-top: 100px;
+        
+        color: darkred;
+        text-align: center;
+    }
+
+code 
+    {
+        background-color:white;
+        color: #666;
+        font-weight: lighter;
+ 
+        display: inline-block;
+        height: 200px;
+        padding-top: 20px;
+        text-align: center;
+        width: 210px;
+    }
+.head4
+    {
+        margin-top: 50px;
+        
+        border: 1px;
+        text-align: left;
+        padding-top: 20px;
+        font-family:serif;
+        font-size: 12;
+        column-span: 1;
+        
+    }
+
+.twoFA
+{
+  text-align: center;  
+}
+
+.workspaceHome
+{
+     text-align: center;
+}
+
+
+.createWorkspace
+{
+     padding-top: 100px;
+     text-align: center;
+}
+
+.backup
+{
+     text-align: center;
+}
+
+textarea
+{
+    background-color:bisque;
+    height: 100px;
+    width: 300px;
+}
+pre
+{
+    margin-left: 200px;
+     text-align: left;
+}
+
+.manageWS
+{
+    text-align: center;
+    
+}
+
+
+.WSFiles
+{
+    text-align: center;
+    
+}
+
+
+.userList
+
+{
+    position: absolute;
+    left:50%;
+    margin-left:-200px;
+   /* background-color:#AABFD4;*/
+    width: 400px;
+    /*border-radius: 6px;
+    border: 1px solid #3A3A5D;*/
+    z-index: -1;
+    top: 350px;
+    
+}
+
+
+.FileListBox
+
+{
+    position: absolute;
+    left:50%;
+    margin-left:-200px;
+   /* background-color:#AABFD4;*/
+    width: 400px;
+    /*border-radius: 6px;
+    border: 1px solid #3A3A5D;*/
+    z-index: -1;
+    top: 350px;
+    
+}
+
+
+
+
+
+.newuser
+{
+    
+    
+    clear: both;
+    width: 800px;
+    text-align: center;
+    margin-left:200px;
+    margin-top: 50px;
+    position:relative;
+    
+    
+}
+
+
+
+.manageFiles
+{
+    
+    
+    clear: both;
+    width: 800px;
+    text-align: center;
+    margin-left:200px;
+    margin-top: 50px;
+    position:relative;
+    
+    
+}
+
+
+.downloadButton
+{
+    
+    color: darkblue;
+}
+
+
+
+
+
+.selectedUser
+{
+    clear: both;
+    text-align: center;
+    position: absolute;
+    margin-left:-200px;
+   /* background-color:#AABFD4;*/
+    width: 400px;
+    left: 50%;
+    background-color: orange;
+    margin-top: 100px;
+    border-radius: 20px;
+    
+    
+}
+
+
+.selectedFile
+{
+    clear: both;
+    text-align: center;
+    position: absolute;
+    margin-left:-200px;
+   /* background-color:#AABFD4;*/
+    width: 400px;
+    left: 50%;
+    background-color: orange;
+    margin-top: 100px;
+    border-radius: 20px;
+    
+    
+}
+
+.decryptButton
+
+{
+ display: inline;
+    
+}
+
+.downloadButton
+
+{
+ display: inline;
+    float: right;
+}
+

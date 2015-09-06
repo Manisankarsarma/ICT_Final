@@ -1,19 +1,19 @@
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
-/*  Encrypt/decrypt files                                                                         */
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 
-function encryptFile(file) {
+
+function encryptFile(file)
+{
     // use FileReader.readAsArrayBuffer to handle binary files
     var reader = new FileReader();
     reader.readAsArrayBuffer(file);
-    reader.onload = function(evt) {
+    reader.onload = function(evt) 
+    {
         $('body').css({'cursor':'wait'});
 
-        // Aes.Ctr.encrypt expects a string, but converting binary file directly to string could
-        // give invalid Unicode sequences, so convert bytestream ArrayBuffer to single-byte chars
+        
         var contentBytes = new Uint8Array(reader.result); // ≡ evt.target.result
         var contentStr = '';
-        for (var i=0; i<contentBytes.length; i++) {
+        for (var i=0; i<contentBytes.length; i++)
+        {
             contentStr += String.fromCharCode(contentBytes[i]);
         }
 
@@ -33,11 +33,13 @@ function encryptFile(file) {
     }
 }
 
-function decryptFile(file) {
+function decryptFile(file)
+{
     // use FileReader.ReadAsText to read (base64-encoded) ciphertext file
     var reader = new FileReader();
     reader.readAsText(file);
-    reader.onload = function(evt) {
+    reader.onload = function(evt) 
+    {
         $('body').css({'cursor':'wait'});
 
         var content = reader.result; // ≡ evt.target.result
@@ -49,7 +51,8 @@ function decryptFile(file) {
 
         // convert single-byte character stream to ArrayBuffer bytestream
         var contentBytes = new Uint8Array(plaintext.length);
-        for (var i=0; i<plaintext.length; i++) {
+        for (var i=0; i<plaintext.length; i++)
+        {
             contentBytes[i] = plaintext.charCodeAt(i);
         }
 
