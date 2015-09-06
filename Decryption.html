@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE>
 
 <html>
@@ -148,4 +149,156 @@
         </div>
     </body>
     
+=======
+<!DOCTYPE>
+
+<html>
+    
+    <head>
+        <title>Encrypt and Upload</title>
+        
+        <link rel="stylesheet" type="text/css" href="Decryption.css">
+        
+        <script src="aes.js">/* AES JavaScript implementation */</script>
+    <script src="aes-ctr.js">/* AES Counter Mode implementation */</script>
+    <script src="aes-ctr-file.js">/* encrypt/decrypt files */</script>
+    <script src="jquery.min.js"></script>
+    <script src="mtl.js">/* MTL utils */</script>
+    <script src="prettify.js">/* google-code-prettify */</script>
+    <script>
+        $(document).ready(function() {
+            // encrypt listener
+            $('#encrypt').click( function() {
+                var t = new Date();
+                ciphertext = Aes.Ctr.encrypt($('#plaintext').val(), $('#password').val(), 256);
+                $('#encrypt-time').html(((new Date() - t))+'ms');
+                $('#cipher').val(ciphertext);
+            });
+            // decrypt listener
+            $('#decrypt').click( function() {
+                var t = new Date();
+                plain = Aes.Ctr.decrypt($('#cipher').val(), $('#password').val(), 256);
+                $('#decrypt-time').html(((new Date() - t))+'ms');
+                $('#plain').val(plain);
+            });
+
+            // show source code
+            $.get('js/crypto/aes.js', function(data) {
+                var src = data.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') // replace &, <, >
+                $('#aes-src').html(src);
+                prettyPrint();
+            }, 'text');
+            $.get('js/crypto/aes-ctr.js', function(data) {
+                var src = data.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') // replace &, <, >
+                $('#aes-ctr-src').html(src);
+                prettyPrint();
+            }, 'text');
+            $.get('aes-ctr-file.js', function(data) {
+                var src = data.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') // replace &, <, >
+                $('#aes-ctr-file-src').html(src);
+                prettyPrint();
+            }, 'text');
+        });
+    </script>
+    <script>/* test vectors */
+    function byteArrayToHexStr(b) {  // convert byte array to hex string for displaying test vectors
+      var s = '';
+      for (var i=0; i<b.length; i++) s += b[i]<0x10 ? '0'+b[i].toString(16)+' ' : b[i].toString(16)+' ';
+      return s;
+    }
+
+    String.prototype.toCodes = function() {
+      if (this.length == 0) return '';
+      var arr = this.split('');
+      for (a in arr) arr[a] = arr[a].charCodeAt(0);
+      return arr.join(':');
+    }
+
+    function verifyKeyExpansion() {
+      var cipher = [0x2b, 0x7e, 0x15, 0x16, 0x28, 0xae, 0xd2, 0xa6,
+                    0xab, 0xf7, 0x15, 0x88, 0x09, 0xcf, 0x4f, 0x3c];
+      alert('128: '+keyScheduleToHexStr(Aes.keyExpansion(cipher)));
+      var cipher = [0x8e, 0x73, 0xb0, 0xf7, 0xda, 0x0e, 0x64, 0x52,
+                    0xc8, 0x10, 0xf3, 0x2b, 0x80, 0x90, 0x79, 0xe5,
+                    0x62, 0xf8, 0xea, 0xd2, 0x52, 0x2c, 0x6b, 0x7b];
+      alert('192: '+keyScheduleToHexStr(Aes.keyExpansion(cipher)));
+      var cipher = [0x60, 0x3d, 0xeb, 0x10, 0x15, 0xca, 0x71, 0xbe,
+                    0x2b, 0x73, 0xae, 0xf0, 0x85, 0x7d, 0x77, 0x81,
+                    0x1f, 0x35, 0x2c, 0x07, 0x3b, 0x61, 0x08, 0xd7,
+                    0x2d, 0x98, 0x10, 0xa3, 0x09, 0x14, 0xdf, 0xf4];
+      alert('256: '+keyScheduleToHexStr(Aes.keyExpansion(cipher)));
+    }
+
+    function keyScheduleToHexStr(keySchedule) {  // return expanded key as hex words, as per FIPS-197§A
+      var d = '';
+      for (w=0; w<keySchedule.length; w++) {
+        for (var b=0; b<4; b++) {
+          var byte = keySchedule[w][b];
+          d += byte<0x10 ? '0'+byte.toString(16) : byte.toString(16);
+        }
+        d += ' ';
+      }
+      return d;
+    }
+    </script>
+     <script src="file-saver.js"></script>
+        
+    </head>
+    
+    <body>
+        
+        <div id="container">
+            
+            <header>
+                <img src="Images/logo1.png" style="height:100px; margin-left:50px">
+                <div class="nav">
+                    <ul>
+                        
+                            <li><a href="Index.html" style="color:brown">HOME</a></li>
+                            <li><a href="#" style="color:brown">FEATURES</a></li>
+                            <li><a href="#" style="color:brown">CONTACT</a></li>
+                        
+                        
+                    </ul>
+                </div>
+            </header>
+        
+            <div id="main">
+                
+                <div id="column1">
+                    
+                </div>
+                
+              
+                <div id="column2">
+                    
+                
+                    
+            <h1 style="color:rgb(255,214,74); margin-left:100px">Download Files</h1>
+           
+            <fieldset style="float:left; color:white; font-size:20px; margin-top:20px">
+            <label>Encrypted file: </label>
+            <input type="file" name="enc-file" id="enc-file" onchange="decryptFile(this.files[0])">
+            <output class="small grey" id="decrypt-file-time"></output>
+            <p>Encrypted file will be decrypted and downloaded with '.decrypted' suffix.</p>
+    </fieldset>   
+                    
+                    
+
+                </div>
+                
+                <div id="sidebar">
+                    <p style="color:black; margin-left:30px; margin-top:30px; font-size:20px">Follow the below Instructions for Decrypting the files:</p>
+                </div>
+            
+            </div>
+        
+            <footer>
+                <p>Copyright@2015 IRON-HIDE. All rights reserved.</p>
+                
+            </footer>
+        </div>
+    </body>
+    
+>>>>>>> e359b8b8b6180150030c92ea4d4ea07053d2e4fb
 </html>
