@@ -1,0 +1,285 @@
+<head>
+  <title>ironhide</title>
+</head>
+
+
+  <body class="body">
+      
+      
+        <div class="header">
+            
+            <div class="container">
+                
+                <div class="logo">
+                    <img src="/images/logo.png">
+                </div><!--logo-->
+                
+                <div class="nav">
+                    <ul>
+        
+    <li>    {{>loginButtons }} </li>
+                        
+                        
+                    </ul>
+                </div><!--nav-->
+            </div><!--container-->
+        
+            
+ {{> Template.dynamic template=template_name }}  
+           
+    <!--    {{>manageWSusers}}  -->
+            
+         <!--    {{>workspaceFiles}} -->
+            
+            
+              
+                    
+                </div><!--header-->
+            
+                       
+                
+                
+            
+            
+     
+
+
+       
+   
+ <!-- {{> hello}}-->
+</body>
+
+<template name="home">
+      <div class="site_image">
+                    
+                    
+                    <img src="/images/site_image.png">
+                    
+                                    
+                    <h2 class="home_text">SECURE WEB VAULT FOR STORING YOUR CONFIDENTIAL DOCUMENTS</h2>
+          
+    </div>
+    
+    
+</template>
+<template name="twoFA">
+
+
+    <div class="twoFA">
+    <h2 >Send 2FA token to email</h2>
+
+        <input  type="button" class="twoFAbutton" value="Send">
+
+    <h2 >Enter 2FA token</h2>
+        
+        <form>
+        <input type="text" name="twoFAtoken">
+        <input type="submit" value="Submit">     
+    
+        </form>
+
+    </div>    
+</template>
+
+
+
+<template name="workspaceHome">
+
+    <div class="workspaceHome">
+    <h2 >Workspace Home</h2>
+    
+        <input  type="button" class="createWorkspaceButton" value="Create Workspace">
+    
+        <input  type="button" class="existWorkspaceButton" value="Existing Workspace">
+   
+
+    </div>   
+    
+    
+</template>
+
+<template name="createWorkspace">
+
+
+    <div class="createWorkspace">
+    <h2 > Create New Workspace</h2>
+        
+        <form>
+        
+          Workspace Name <br> <input type="text" name="wsName"> <br> <br> 
+        Encryption Password <br>  <input type="text" name="enPswd"> <br> <br>
+                            <input type="submit" value="Submit">     
+    
+        </form>
+        
+        
+
+    </div>
+
+
+
+</template>
+
+
+
+<template name= "backupWSkey">
+
+
+<div class="backup">  
+    
+    <h2 > Backup Workspace Key: Instructions</h2>
+
+
+  <textarea> {{WSkey}}</textarea> 
+ <pre> 
+ 1) This is your Workspace Key. 
+ 2) Copy the above workspace key and securely back it up. 
+ 3) Iron-Hide <em><b>does not </b></em> store the encryption password on the server.
+ 4) The "Retrieve Encryption Password" option can be used only if you possess the Workspace key. 
+ 5) Send the workspace key, when inviting new users to the workspace.
+ 6) <em><b>Do not </b></em> store or send the encryption password by mail in cleartext.
+</pre>
+
+<input  type="button" class="gotoManageUsers" value="Manage Users">
+</div>
+
+</template>
+          
+    
+
+
+
+<template name= "manageWSusers">
+ 
+<div class="manageWS">
+    
+         
+      
+    
+  <div class="newuser">
+       <h2> Manage Users</h2>
+       <form>
+       
+        Add User Email    : <input type="text" name="newUser"> 
+                            <input type="submit" value="Add">     
+                            <input  type="button" class="removeUserButton" value="Remove">
+                            <input  type="button" class="wsButton" value="View Files">
+
+        </form>
+             
+  </div>
+        
+        <div class="userList">
+        
+            <ol>
+            {{#each WSusers}}
+                
+                {{>UserDetails}}
+            
+            {{/each}}
+            </ol>
+          
+        </div>
+        
+        
+    <div class="selectedUser">   
+    <p> <b>Selected User: {{selectedUser}} </b></p>
+    </div>
+    
+    </div> 
+        
+</template>
+   
+        
+        
+        
+    
+
+
+<template name="UserDetails">
+    
+    <p class="usrList {{selectedClass}}">
+          <!--  <span class="usrEmail">{{email}}</span> -->
+        {{email}}
+        <hr>
+        
+    </p>
+
+
+</template>
+
+
+
+
+
+
+
+<template name="workspaceFiles">
+
+<div class="WSFiles">
+    
+         
+      
+    
+  <div class="manageFiles">
+       <h2> Manage Workspace Files</h2>
+      
+      
+      <label for="filePicker">Encrypt and Upload:</label>
+        <input type="file" id="filePicker">
+        <input  type="button" class="decryptButton" value="Decrypt Selected File">
+      <a class="downloadButton" href="{{buffer}}" target="_blank"> Download File: {{fname}}</a>
+      
+             
+  </div>
+        
+        <div class="FileListBox">
+        
+            <ol>
+            {{#each WSFilesHelper}}
+                
+                {{>FileList}}
+            
+            {{/each}}
+            </ol>
+          
+        </div>
+        
+        
+    <div class="selectedFile">   
+    <p> <b>Selected File: {{selectedFile}} </b></p>
+    </div>
+    
+    </div> 
+    
+    
+    
+    
+    
+</template>
+
+
+
+<template name="FileList">
+    
+    <p>
+          <!--  <span class="usrEmail">{{email}}</span> -->
+        {{name}}
+        <hr>
+        
+    </p>
+
+
+</template>
+
+
+<template name="existWorkspace">
+
+
+   
+
+
+
+
+</template>
+
